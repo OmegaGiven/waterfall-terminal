@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://xqi7i3rg5ffm"]
+
+[ext_resource type="Script" uid="uid://bok25mci8lsqy" path="res://min_max.gd" id="1_ok831"]
+[ext_resource type="Script" uid="uid://cj5ghebn3mx8f" path="res://dir.gd" id="2_tjdwk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 459.0
+offset_top = 256.0
+offset_right = 711.0
+offset_bottom = 316.0
+
+[node name="Dir" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+focus_mode = 2
+text = "/home"
+selection_enabled = true
+script = ExtResource("2_tjdwk")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="MinMax" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+text = "Min/Max"
+script = ExtResource("1_ok831")
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 16.0
+offset_bottom = 647.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 72.0
+offset_bottom = 647.0
+
+[node name="Node" type="Node" parent="."]
