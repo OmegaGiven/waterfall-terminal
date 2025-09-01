@@ -15,6 +15,11 @@ run/main_scene="uid://xqi7i3rg5ffm"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FocusManager="*res://FocusManager.gd"
+InputController="*res://InputController.gd"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
