@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://xqi7i3rg5ffm"]
+
+[ext_resource type="Script" uid="uid://bcjm0h4ygugvh" path="res://bubble.gd" id="1_to824"]
+[ext_resource type="Script" uid="uid://d3pevmd8jq0en" path="res://input.gd" id="2_to824"]
+[ext_resource type="Script" uid="uid://dobjgblih8ygn" path="res://output.gd" id="3_1mgrk"]
+
+[node name="Bubble" type="Node2D"]
+script = ExtResource("1_to824")
+
+[node name="Input" type="LineEdit" parent="."]
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 966.0
+offset_bottom = 68.0
+size_flags_horizontal = 3
+script = ExtResource("2_to824")
+
+[node name="Output" type="TextEdit" parent="."]
+offset_left = 22.0
+offset_top = 85.0
+offset_right = 1005.0
+offset_bottom = 421.0
+script = ExtResource("3_1mgrk")
+
+[node name="MMToggle" type="CheckButton" parent="."]
+offset_left = 911.0
+offset_top = 30.0
+offset_right = 955.0
+offset_bottom = 54.0
+
+[connection signal="toggled" from="MMToggle" to="." method="_on_mm_toggle_toggled"]

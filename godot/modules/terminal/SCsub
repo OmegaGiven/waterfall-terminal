@@ -1,2 +1,7 @@
+# SCsub
 Import('env')
-env.add_source_files(env.modules_sources, '*.cpp')
+
+env.add_source_files(env.modules_sources, [
+    'terminal.cpp',
+    'register_types.cpp',
+])

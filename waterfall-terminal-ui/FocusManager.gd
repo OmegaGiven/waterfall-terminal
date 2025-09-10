@@ -10,9 +10,11 @@ func _ready():
 	set_process_input(true)
 
 func register_focusable(node: Node):
-#	upon creation of a new object make sure to call this function to add that new object to the focusable list
+#	upon creation of a new object make sure to call this function in that object to add it to the focusable list
 	if node not in focusables:
 		focusables.append(node)
+		if node is Control:
+			node.connect("focus_entered", Callable(func(): _on_node_focus_entered(node)))
 
 func unregister_focusable(node: Node):
 #	if deletion is ever needed make sure to call this to delete from focusables else hotkeys will get janky
@@ -26,7 +28,14 @@ func _input(event):
 			else:
 				cycle_focus()
 
+func _on_node_focus_entered(node: Node):
+	var index = focusables.find(node)
+	if index != -1:
+		current_index = index
+		current_node = node
+
 func cycle_focus(backward := false):
+#	this manages tabbing forward and back of focable nodes.
 	if focusables.size() == 0:
 		return
 

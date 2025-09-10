@@ -1,7 +1,5 @@
 extends Control
 
-var terminal = Terminal.new()
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
 		var focus_node = FocusManager.current_node
